@@ -24,6 +24,9 @@ data/*.zip
 .DS_Store
 Thumbs.db
 
+# Office lock files
+~$*
+
 # Report exports
 report/*.docx
 report/*.pdf
