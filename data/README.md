@@ -1,7 +1,7 @@
 # Dataset
 
 **Instacart Market Basket Analysis** (Kaggle, official Instacart 2017 release):
-https://www.kaggle.com/c/instacart-market-basket-analysis
+https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis
 
 Raw CSVs are not committed to this repo (too large for git). By default, scripts in `bigdata/src/` and `nonbigdata/src/` read from:
 

@@ -4,7 +4,7 @@ Group assignment for IST3134 Big Data Analytics in the Cloud (Sunway University)
 
 ## Problem
 
-Using the [Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) dataset (orders, order-products, products — 32M+ order-product rows), we answer two questions of our own framing (not Kaggle's original "predict next reorder" task):
+Using the [Instacart Market Basket Analysis](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis) dataset (orders, order-products, products — 32M+ order-product rows), we answer two questions of our own framing (not Kaggle's original "predict next reorder" task):
 
 1. **Which products are most frequently purchased together?** — FP-Growth / association rule mining over per-order product baskets.
 2. **Can customers be grouped into distinct shopping behavior segments?** — K-means clustering over engineered per-user features (order count, avg basket size, reorder rate, days-between-orders).
