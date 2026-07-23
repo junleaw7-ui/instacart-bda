@@ -1,0 +1,121 @@
+algorithm,implementation,n_orders,elapsed_sec,peak_rss_mb,returncode,stdout_tail
+fpgrowth,nonbigdata,1000,3.77,165.1,0,"  Organic Hass Avocado    0.069
+       Organic Avocado    0.054
+          Strawberries    0.053
+           Large Lemon    0.048
+  Organic Yellow Onion    0.041
+   Organic Raspberries    0.040"
+fpgrowth,bigdata,1000,112.86,1969.6,0,"  require_minimum_pandas_version()
+Baskets: 1000
+Basket build time: 40.12s
+FP-Growth fit + rules time: 60.77s
+Frequent itemsets found: 52
+Association rules found: 6"
+kmeans,nonbigdata,1000,9.8,291.8,0,"0                 1.0  ...                    6.402707
+1                 1.0  ...                    9.517858
+2                 2.0  ...                    8.100000
+3                 1.0  ...                   25.517443
+
+[4 rows x 4 columns]"
+kmeans,bigdata,1000,60.86,1773.9,0,"|      2|              1.0|  14.146005509641872| 0.4310111442480043|              7.049586776859504|
+|      3|              2.0|   9.857142857142858| 0.6935266627137023|              9.214285714285714|
++-------+-----------------+--------------------+-------------------+-------------------------------+
+
+SUCCESS: The process with PID 23416 (child process of PID 11320) has been terminated.
+SUCCESS: The process with PID 11320 (child process of PID 22188) has been terminated."
+fpgrowth,nonbigdata,5000,3.76,212.4,0,"  Organic Hass Avocado   0.0666
+       Organic Avocado   0.0550
+           Large Lemon   0.0478
+   Organic Raspberries   0.0448
+          Strawberries   0.0438
+    Organic Whole Milk   0.0392"
+fpgrowth,bigdata,5000,106.24,1788.6,0,"FP-Growth fit + rules time: 57.53s
+Frequent itemsets found: 47
+Association rules found: 4
+SUCCESS: The process with PID 18720 (child process of PID 12632) has been terminated.
+SUCCESS: The process with PID 12632 (child process of PID 21108) has been terminated.
+SUCCESS: The process with PID 21108 (child process of PID 2560) has been terminated."
+kmeans,nonbigdata,5000,9.41,292.3,0,"0            1.000000  ...                    9.245345
+1            1.000000  ...                   25.198217
+2            1.000000  ...                    6.132668
+3            2.035971  ...                    7.700240
+
+[4 rows x 4 columns]"
+kmeans,bigdata,5000,58.39,1831.2,0,"|      3|              1.0|   9.872135994087214|0.33675010202109085|              6.894308943089431|
++-------+-----------------+--------------------+-------------------+-------------------------------+
+
+SUCCESS: The process with PID 23068 (child process of PID 21316) has been terminated.
+SUCCESS: The process with PID 21316 (child process of PID 23316) has been terminated.
+SUCCESS: The process with PID 23316 (child process of PID 1592) has been terminated."
+fpgrowth,nonbigdata,20000,4.79,611.8,0,"  Organic Hass Avocado  0.06670
+       Organic Avocado  0.05575
+           Large Lemon  0.04635
+          Strawberries  0.04530
+   Organic Raspberries  0.04330
+                 Limes  0.04305"
+fpgrowth,bigdata,20000,102.65,1870.5,0,"FP-Growth fit + rules time: 57.30s
+Frequent itemsets found: 43
+Association rules found: 2
+SUCCESS: The process with PID 13916 (child process of PID 22956) has been terminated.
+SUCCESS: The process with PID 22956 (child process of PID 4344) has been terminated.
+SUCCESS: The process with PID 4344 (child process of PID 3588) has been terminated."
+kmeans,nonbigdata,20000,10.97,307.8,0,"0            1.000000  ...                    7.524432
+1            2.097957  ...                    7.749579
+2            1.000318  ...                   26.801464
+3            1.000000  ...                    7.086223
+
+[4 rows x 4 columns]"
+kmeans,bigdata,20000,77.52,1571.1,0,"|      3|               2.0|  10.028581035642233|0.6725277611343667|              7.973772696704775|
++-------+------------------+--------------------+------------------+-------------------------------+
+
+SUCCESS: The process with PID 8648 (child process of PID 22996) has been terminated.
+SUCCESS: The process with PID 22996 (child process of PID 18416) has been terminated.
+SUCCESS: The process with PID 18416 (child process of PID 5240) has been terminated."
+fpgrowth,nonbigdata,100000,34.2,2543.1,0,"  Organic Hass Avocado  0.06585
+       Organic Avocado  0.05432
+           Large Lemon  0.04737
+          Strawberries  0.04427
+                 Limes  0.04354
+   Organic Raspberries  0.04275"
+fpgrowth,bigdata,100000,163.69,1677.9,0,"FP-Growth fit + rules time: 90.25s
+Frequent itemsets found: 40
+Association rules found: 0
+SUCCESS: The process with PID 20468 (child process of PID 20736) has been terminated.
+SUCCESS: The process with PID 20736 (child process of PID 21688) has been terminated.
+SUCCESS: The process with PID 21688 (child process of PID 20244) has been terminated."
+kmeans,nonbigdata,100000,15.46,309.6,0,"0            1.161088  ...                   25.436970
+1            1.296839  ...                   11.066555
+2            1.286876  ...                    7.281815
+3            3.610445  ...                    6.713488
+
+[4 rows x 4 columns]"
+kmeans,bigdata,100000,115.51,1416.2,0,"|      3|1.2252140382981505|   7.962665838834063|0.3045938427046069|              7.816863821536718|
++-------+------------------+--------------------+------------------+-------------------------------+
+
+SUCCESS: The process with PID 16540 (child process of PID 19172) has been terminated.
+SUCCESS: The process with PID 19172 (child process of PID 2280) has been terminated.
+SUCCESS: The process with PID 2280 (child process of PID 9472) has been terminated."
+fpgrowth,nonbigdata,500000,25.27,615.9,1,"    arr = self._interleave(dtype=dtype, na_value=na_value)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\internals\managers.py"", line 1918, in _interleave
+    result = np.empty(self.shape, dtype=dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 21.4 GiB for an array with shape (46049, 500000) and data type bool"
+fpgrowth,bigdata,500000,147.18,2464.3,0,"FP-Growth fit + rules time: 83.92s
+Frequent itemsets found: 40
+Association rules found: 0
+SUCCESS: The process with PID 16936 (child process of PID 19560) has been terminated.
+SUCCESS: The process with PID 19560 (child process of PID 20296) has been terminated.
+SUCCESS: The process with PID 20296 (child process of PID 9860) has been terminated."
+kmeans,nonbigdata,500000,28.11,363.9,0,"0            9.650966  ...                    6.683732
+1            2.673959  ...                    9.398338
+2            2.610693  ...                   14.070873
+3            1.774148  ...                   25.270208
+
+[4 rows x 4 columns]"
+kmeans,bigdata,500000,129.16,1589.1,0,"|      3| 2.790053641240113|    7.00578186761567| 0.6888883670140985|             11.448057615627397|
++-------+------------------+--------------------+-------------------+-------------------------------+
+
+SUCCESS: The process with PID 22100 (child process of PID 7228) has been terminated.
+SUCCESS: The process with PID 7228 (child process of PID 8896) has been terminated.
+SUCCESS: The process with PID 8896 (child process of PID 20660) has been terminated."

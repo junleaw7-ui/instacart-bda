@@ -28,3 +28,9 @@ Thumbs.db
 report/*.docx
 report/*.pdf
 !report/README.md
+
+# Generated run artifacts (regenerate via the scripts; not committed)
+bigdata/output/
+nonbigdata/output/
+# benchmark_results.csv IS committed -- it's the performance-comparison data
+# referenced by report/README.md, not a regenerable sample-run byproduct.

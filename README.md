@@ -31,6 +31,19 @@ Both are unsupervised; no labeled target variable is used.
 | Code quality | 10% |
 | Implementation | 10% |
 
+## Setup (local dev/testing)
+
+1. Download the dataset (see `data/README.md`) and set `INSTACART_DATA_DIR` if it's not at the default path.
+2. `pip install -r requirements.txt`
+3. PySpark needs a JDK (17 was used for local dev) — install one and set `JAVA_HOME`/`PATH` before running anything in `bigdata/`.
+4. Run an implementation directly, e.g.:
+   ```
+   python nonbigdata/src/fpgrowth_local.py --n-orders 5000 --min-support 0.02
+   python bigdata/src/fpgrowth_spark.py --n-orders 5000 --min-support 0.02
+   ```
+   Both accept `--n-orders` to run on a subsample; omit it to run on the full dataset.
+5. `python benchmark.py` runs both implementations across increasing `--n-orders` scales and writes timing/memory results to `benchmark_results.csv`. Note: this runs Spark in `local[*]` mode on a laptop, not EMR — it shows the scaling trend, not final cluster-scale numbers. Re-run the Big Data side on EMR with the full data for the report's performance comparison.
+
 ## Submission
 
 - Code + dataset link → GitHub (this repo)

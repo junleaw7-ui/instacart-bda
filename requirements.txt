@@ -1,0 +1,10 @@
+pyspark==4.2.0
+pandas==3.0.5
+numpy==2.5.1
+scikit-learn==1.9.0
+mlxtend==0.25.0
+scipy==1.18.0
+pyarrow==25.0.0
+psutil==7.2.2
+joblib==1.5.3
+threadpoolctl==3.6.0
