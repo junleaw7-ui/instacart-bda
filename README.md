@@ -1,6 +1,6 @@
 # Instacart Big Data Analytics — IST3134 Group Assignment
 
-Group assignment for IST3134 Big Data Analytics in the Cloud (Sunway University), 20% of final grade, due 10–13 Aug 2026.
+Group assignment for IST3134 Big Data Analytics in the Cloud (Sunway University).
 
 ## Problem
 
@@ -19,18 +19,6 @@ Both are unsupervised; no labeled target variable is used.
 - `report/` — outline/draft for the written report, exported separately as Word/PDF and submitted via eLearn (not part of the GitHub-graded code)
 - `reflections/` — individual reflections, one file per team member (not collaborative)
 
-## Grading rubric (from the actual assignment brief)
-
-| Section | Weight |
-|---|---|
-| Problem introduction | 10% |
-| Dataset introduction | 10% |
-| MapReduce/Spark/SQL approach explanation | 20% |
-| Output analysis | 20% |
-| Individual reflection | 20% |
-| Code quality | 10% |
-| Implementation | 10% |
-
 ## Setup (local dev/testing)
 
 1. Download the dataset (see `data/README.md`) and set `INSTACART_DATA_DIR` if it's not at the default path.
@@ -43,9 +31,3 @@ Both are unsupervised; no labeled target variable is used.
    ```
    Both accept `--n-orders` to run on a subsample; omit it to run on the full dataset.
 5. `python benchmark.py` runs both implementations across increasing `--n-orders` scales and writes timing/memory results to `benchmark_results.csv`. Note: this runs Spark in `local[*]` mode on a laptop, not EMR — it shows the scaling trend, not final cluster-scale numbers. Re-run the Big Data side on EMR with the full data for the report's performance comparison.
-
-## Submission
-
-- Code + dataset link → GitHub (this repo)
-- Written report (Word/PDF) → submitted separately via eLearn
-- Instructor confirmation of dataset/problem choice: due 24 Jul 2026
