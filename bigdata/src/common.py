@@ -50,9 +50,15 @@ def data_dir() -> str:
 
 
 def get_spark(app_name: str, driver_memory: str = "4g") -> SparkSession:
+    # SPARK_MASTER lets local dev force local[*]; on EMR, leave it unset so
+    # spark-submit's --master yarn (and EMR's cluster defaults) take effect --
+    # calling .master() here would silently override that and run single-node.
+    builder = SparkSession.builder.appName(app_name)
+    master = os.environ.get("SPARK_MASTER")
+    if master:
+        builder = builder.master(master)
     return (
-        SparkSession.builder.appName(app_name)
-        .master("local[*]")
+        builder
         .config("spark.driver.memory", driver_memory)
         .config("spark.sql.shuffle.partitions", "8")
         .getOrCreate()

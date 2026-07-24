@@ -35,7 +35,7 @@ Both are unsupervised; no labeled target variable is used.
 
 1. Download the dataset (see `data/README.md`) and set `INSTACART_DATA_DIR` if it's not at the default path.
 2. `pip install -r requirements.txt`
-3. PySpark needs a JDK (17 was used for local dev) — install one and set `JAVA_HOME`/`PATH` before running anything in `bigdata/`.
+3. PySpark needs a JDK (17 was used for local dev) — install one and set `JAVA_HOME`/`PATH` before running anything in `bigdata/`. Also set `SPARK_MASTER=local[*]` for local runs — `bigdata/src/common.py` leaves Spark's master unset otherwise, so that on EMR `spark-submit --master yarn` (not a hardcoded `local[*]`) actually controls where the job runs.
 4. Run an implementation directly, e.g.:
    ```
    python nonbigdata/src/fpgrowth_local.py --n-orders 5000 --min-support 0.02
