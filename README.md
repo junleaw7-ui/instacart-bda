@@ -16,8 +16,6 @@ Both are unsupervised; no labeled target variable is used.
 - `data/` — dataset download instructions (raw CSVs are not committed; see `data/README.md`)
 - `bigdata/` — PySpark MLlib implementation (FP-Growth + K-means), intended to run on AWS EMR
 - `nonbigdata/` — local single-machine comparison (pandas + mlxtend + scikit-learn)
-- `report/` — outline/draft for the written report, exported separately as Word/PDF and submitted via eLearn (not part of the GitHub-graded code)
-- `reflections/` — individual reflections, one file per team member (not collaborative)
 
 ## Setup (local dev/testing)
 
