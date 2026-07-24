@@ -66,5 +66,24 @@ def get_spark(app_name: str, driver_memory: str = "4g") -> SparkSession:
 
 
 def read_csv(spark: SparkSession, data_dir_: str, filename: str, schema: StructType):
-    path = str(Path(data_dir_) / filename)
+    if data_dir_.startswith("s3://") or data_dir_.startswith("s3a://"):
+        path = f"{data_dir_.rstrip('/')}/{filename}"
+    else:
+        path = str(Path(data_dir_) / filename)
     return spark.read.csv(path, header=True, schema=schema)
+
+
+def save_csv(pdf, output_dir: str, filename: str):
+    """Write a pandas DataFrame to output_dir/filename, whether output_dir is a
+    local path or an s3:// URI (pandas' .to_csv can't write directly to S3)."""
+    csv_text = pdf.to_csv(index=False)
+    if output_dir.startswith("s3://") or output_dir.startswith("s3a://"):
+        import boto3
+
+        bucket, _, prefix = output_dir[output_dir.index("://") + 3 :].partition("/")
+        key = f"{prefix.rstrip('/')}/{filename}" if prefix else filename
+        boto3.client("s3").put_object(Bucket=bucket, Key=key, Body=csv_text.encode("utf-8"))
+    else:
+        out_path = Path(output_dir)
+        out_path.mkdir(parents=True, exist_ok=True)
+        (out_path / filename).write_text(csv_text, encoding="utf-8")

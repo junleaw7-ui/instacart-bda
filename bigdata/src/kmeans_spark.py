@@ -12,7 +12,7 @@ from pyspark.ml.clustering import KMeans
 from pyspark.ml.feature import StandardScaler, VectorAssembler
 from pyspark.sql import functions as F
 
-from common import ORDER_PRODUCTS_SCHEMA, ORDERS_SCHEMA, data_dir, get_spark, read_csv
+from common import ORDER_PRODUCTS_SCHEMA, ORDERS_SCHEMA, data_dir, get_spark, read_csv, save_csv
 
 FEATURE_COLUMNS = [
     "total_orders",
@@ -52,11 +52,10 @@ def main():
     parser.add_argument("--data-dir", default=None)
     parser.add_argument("--n-orders", type=int, default=None)
     parser.add_argument("--n-clusters", type=int, default=4)
-    parser.add_argument("--output-dir", type=Path, default=Path(__file__).resolve().parent.parent / "output")
+    parser.add_argument("--output-dir", default=str(Path(__file__).resolve().parent.parent / "output"))
     args = parser.parse_args()
 
     ddir = args.data_dir or data_dir()
-    args.output_dir.mkdir(parents=True, exist_ok=True)
 
     spark = get_spark("instacart-kmeans")
 
@@ -77,9 +76,8 @@ def main():
     result.count()
     t2 = time.perf_counter()
 
-    result.select("user_id", *FEATURE_COLUMNS, "cluster").toPandas().to_csv(
-        args.output_dir / "kmeans_user_clusters_spark.csv", index=False
-    )
+    result_pdf = result.select("user_id", *FEATURE_COLUMNS, "cluster").toPandas()
+    save_csv(result_pdf, args.output_dir, "kmeans_user_clusters_spark.csv")
 
     print(f"Users clustered: {feature_count}")
     print(f"Feature engineering time: {t1 - t0:.2f}s")
