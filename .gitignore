@@ -35,5 +35,7 @@ report/*.pdf
 # Generated run artifacts (regenerate via the scripts; not committed)
 bigdata/output/
 nonbigdata/output/
+# bigdata/output_emr/ IS committed -- real full-dataset (3.2M orders / 32M
+# rows) results from the actual AWS EMR run, not a regenerable local sample.
 # benchmark_results.csv IS committed -- it's the performance-comparison data
 # referenced by report/README.md, not a regenerable sample-run byproduct.
