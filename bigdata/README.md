@@ -1,6 +1,6 @@
 # Big Data implementation (PySpark MLlib)
 
-Stack: PySpark MLlib. Developed/tested locally in `local[*]` mode, then run for real on AWS EMR (release emr-7.13.0, Spark 3.5.6, 1 master + 2 core `m5.xlarge`, per Lab 5/6's cluster + spark-submit pattern) against the full dataset in S3 — see `output_emr/` for the real results and `../report/README.md` for the write-up.
+Stack: PySpark MLlib. Developed/tested locally in `local[*]` mode, then run for real on AWS EMR (release emr-7.13.0, Spark 3.5.6, 1 master + 2 core `m5.xlarge`, per Lab 5/6's cluster + spark-submit pattern) against the full dataset in S3 — see `output_emr/` for the real results.
 
 Pipeline (`src/fpgrowth_spark.py`, `src/kmeans_spark.py`):
 1. Ingest `orders`, `order_products__prior`, `products` into Spark DataFrames.
