@@ -25,8 +25,6 @@ BIGDATA_SRC = REPO_ROOT / "bigdata" / "src"
 
 ORDER_SCALES = [1_000, 5_000, 20_000, 100_000, 500_000]
 
-JAVA_HOME = r"C:\Program Files\Microsoft\jdk-17.0.19.10-hotspot"
-
 
 def run_and_measure(cmd: list[str], cwd: Path, env: dict | None = None) -> dict:
     # stdout/stderr go to a temp file, not subprocess.PIPE: Spark's verbose
@@ -75,10 +73,13 @@ def run_and_measure(cmd: list[str], cwd: Path, env: dict | None = None) -> dict:
 def spark_env():
     import os
 
-    env = os.environ.copy()
-    env["JAVA_HOME"] = JAVA_HOME
-    env["PATH"] = JAVA_HOME + r"\bin;" + env.get("PATH", "")
-    return env
+    if not os.environ.get("JAVA_HOME"):
+        raise RuntimeError(
+            "JAVA_HOME is not set. PySpark needs a JDK -- set JAVA_HOME "
+            "(and put its bin/ on PATH) before running benchmark.py, "
+            "same as for anything else under bigdata/ (see repo-root README.md)."
+        )
+    return os.environ.copy()
 
 
 def main():
